@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"fmt"
 	"common/helper"
+	"Model"
 )
 
 func IndexHandler(w http.ResponseWriter, r *http.Request) {
@@ -11,5 +12,6 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetNameHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "我是谁")
+	info := Model.GetUser()
+	fmt.Fprintln(w, helper.OutputJson(1000, "success",info))
 }

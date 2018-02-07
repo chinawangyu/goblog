@@ -3,11 +3,14 @@ package main
 import (
 	"net/http"
 	"log"
-	Controller "Controller"
+	"Controller"
+	"fmt"
+	"strings"
+	"io/ioutil"
 )
 
 func main() {
-
+	
 	router()
 	err := http.ListenAndServe("127.0.0.1:9090", nil)
 	if err != nil {
